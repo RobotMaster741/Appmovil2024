@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn-back" (click)="volverPaginaAnterior()"><ion-icon
+        name="arrow-back-outline"></ion-icon></ion-button>
+
+    <ion-button class="btn-logout" (click)="mostrarConfirmacionCerrarSesion()">
+      <ion-icon name="log-in-outline"></ion-icon> </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="logo"></div>
+  <ion-card class="registro-productos">
+
+    <ion-card-content class="contenido-producto">
+      <ion-card-header>
+        <ion-card-title>Registro de Producto</ion-card-title>
+      </ion-card-header>
+      <ion-list class="datos-producto" formGroup="productoform">
+        <ion-item>
+          <ion-input type="text" id="nombreProducto" [value]="nombre" placeholder="Nombre Producto"
+            [ngClass]="{ 'campo-faltante': !nombre }"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" id="descripcionProducto" [value]="descripcion" placeholder="Descripcion del producto "
+            [ngClass]="{ 'campo-faltante': !descripcion }"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input id="stock" [value]="stock" [counter]="true" maxlength="2" placeholder="Stock"
+            [ngClass]="{ 'campo-faltante': !stock }"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input id="cantidad" [value]="cantidad" [counter]="true" maxlength="1"
+            placeholder="Cantidad de existencias" [ngClass]="{ 'campo-faltante': !cantidad }"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="number" id="costo" [value]="costo"
+            placeholder="Ingresar el costo de la siguiente manera: $ 12.000"
+            [ngClass]="{ 'campo-faltante': !costo }"></ion-input>
+        </ion-item>
+
+        <div class="cont-btn">
+          <ion-button fill="solid" class="btn-registro" (click)="mostrarMensajeConfirmacion()">Registrar
+            Producto</ion-button>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<div class="contenedor-nav" #MainNavigation>
+  <ion-buttons class="contenedor-home">
+    <ion-button (click)="home()">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>

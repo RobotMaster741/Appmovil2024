@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn-logout" (click)="mostrarConfirmacionCerrarSesion()">
+      <ion-icon name="log-in-outline"></ion-icon> </ion-button>
+    <ion-button class="btn-perfil" (click)="Perfil()">
+      <ion-icon name="person"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fullscreen-bg">
+  <div class="logo"></div>
+  <ion-card class="contenedor-datos">
+    <h1>Detalles del Producto</h1>
+    <ion-item>
+      <ion-label>Nombre del Producto:</ion-label>
+      <ion-text>{{ productoSeleccionado.nombre }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripcion del Producto:</ion-label>
+      <ion-text>{{ productoSeleccionado.descripcion }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Stock del Producto:</ion-label>
+      <ion-text>{{ productoSeleccionado.stock }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cantidad del Producto:</ion-label>
+      <ion-text>{{ productoSeleccionado.cantidad }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Costo del Producto:</ion-label>
+      <ion-text>$ {{ productoSeleccionado.costo }}</ion-text>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
+<div class="contenedor-nav" #MainNavigation>
+  <ion-buttons class="contenedor-home">
+    <ion-button (click)="home()">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>

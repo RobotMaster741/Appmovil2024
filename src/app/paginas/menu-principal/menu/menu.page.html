@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn-perfil" (click)="Perfil()">
+      <ion-icon name="person"></ion-icon></ion-button>
+
+    <ion-button *ngIf="usuarioAutenticado" class="btn-logout" (click)="mostrarConfirmacionCerrarSesion()">
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="fullscreen-bg">
+  <div class="logo"></div>
+  <ng-container *ngIf="usuarioAutenticado; else showLoginOptions">
+    <ion-card class="contenedor-productos">
+      <ion-list class="datos-productos">
+        <h1 class="title">Productos</h1>
+        <div class="fixed-search">
+          <ion-searchbar placeholder="Buscar" (ionChange)="onSearchChange($event)"></ion-searchbar>
+        </div>
+        <h6 class="title">Selecciona un Producto y observa sus detalles</h6>
+        <ion-item class="contenedor-btn" *ngFor="let producto of ProductosRegistrados">
+          <ion-button class="btn-seleccionar" expand="full" (click)="verdetalle(producto)"
+            *ngIf="matchProduct(producto.nombre)">
+            <ion-label>
+              <p>Nombre Producto: {{ producto.nombre }}</p>
+              <p>Precio Producto: $ {{ producto.costo }}</p>
+            </ion-label>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #showLoginOptions>
+    <ion-card class="contenedor-login">
+      <ion-card-content class="contenedor-logreg">
+        <ion-card-title>Regístrate o Inicia Sesión para observar los productos</ion-card-title>
+        <ion-list class="contenedor-opt">
+          <ion-title class="titulo">¿No tienes cuenta?</ion-title>
+          <ion-button class="btn-login" (click)="irARegistro()">Regístrate</ion-button>
+
+          <ion-title class="titulo">¿Ya tienes cuenta?</ion-title>
+          <ion-button class="btn-login" (click)="irAIniciarSesion()">Inicia Sesión</ion-button>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,188 @@
+ion-header ion-toolbar {
+    display: flex;
+    z-index: 1;
+    --background: linear-gradient(90deg, #bf03d1, #000);
+    border-bottom: 3px solid #fff;
+
+    .btn-back,
+    .btn-logout {
+        --background: transparent;
+        border-radius: 25px;
+        ion-icon {
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+
+    .btn-back:hover,
+    .btn-logout:hover {
+        background: #fff;
+        border-radius: 25px;
+        ion-icon {
+            font-size: 20px;
+            color: #000;
+        }
+    }
+}
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    width: 97%;
+    height: 140%;
+    margin: 0 auto;
+    overflow: hidden;
+    --background: #000;
+
+    .contenedor-perfil {
+        position: fixed;
+        width: 100%;
+        height: 140%;
+        margin: 0 auto;
+        overflow: auto;
+        --background: none;
+        top: 100px;
+
+        .contenido {
+            ion-card-header ion-card-title {
+                color: #fff;
+                font-weight: 700;
+            }
+
+            .datos-perfil ion-item {
+                --ion-item-text-color: #fff;
+                --ion-item-background: rgba(0, 0, 0, 0.4);
+                --ion-item-padding-start: 10px;
+                --ion-item-padding-end: 10px;
+                padding: 10px;
+
+                .title-label {
+                    color: #fff;
+                    font-size: 15px;
+                }
+
+                ion-input {
+                    color: #fff;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                    border-radius: 0;
+                    padding: 10px;
+                }
+            }
+
+            .container-btn-edit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+
+            .btn-change,
+            .btn-productos {
+                width: 80%;
+                --background: #000;
+                color: #fff;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                position: relative;
+                border: 1px solid #fff;
+
+                &:hover {
+                    animation: pulse 1s infinite;
+                    --background: #fff;
+                    color: #000;
+                }
+            }
+
+            .titulo {
+                color: #fff;
+                font-size: 16px;
+                font-weight: 900;
+            }
+        }
+    }
+
+    .contenedor-login {
+        top: 30%;
+        --background: transparent;
+
+        .contenedor-logreg,
+        .contenedor-opt {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+
+            ion-card-title,
+            .titulo {
+                color: #fff;
+            }
+
+            .btn-login {
+                --background: #000;
+                color: #fff;
+
+                &:hover {
+                    --background: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/logo.gif');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.contenedor-nav {
+    position: fixed;
+    bottom: 0;
+    left: 35%;
+    width: 30%;
+    padding: 8px;
+    z-index: 999;
+
+    ion-buttons.contenedor-home {
+        display: flex;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid #fff;
+
+        &:hover {
+            animation: pulse 1s infinite;
+        }
+        border-radius: 25px;
+        border: 2px solid #fff;
+
+        ion-button {
+            --border-radius: 25px;
+            --color: #FFFFFF;
+            margin: 0 5px;
+            width: 100%;
+            height: 60px;
+
+            ion-icon {
+                font-size: 28px;
+            }
+        }
+    }
+}
